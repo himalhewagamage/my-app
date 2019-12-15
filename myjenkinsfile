@@ -3,6 +3,8 @@ node{
     git 'git credentialsId: 'git-marven', url: 'https://github.com/himalhewagamage/my-app''
   }
   
-
+  stage('Compile Package'){
+   sh 'mvn package'
+  }
   
 }
