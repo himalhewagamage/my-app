@@ -1,12 +1,13 @@
 node{
 
    stage('SCM Checkout'){
-    git : git credentialsId: 'git-marven', url: 'https://github.com/himalhewagamage/my-app'
-  }
-  
-  stage('Compile-Package'){
-   tool name: 'Maven-3', type: 'maven'
-   sh 'mvn package'
-  }
-  
+      git : git credentialsId: 'git-marven', url: 'https://github.com/himalhewagamage/my-app'
+   }
+   
+   stage('Compile-Package'){
+      //Get Maven home path
+      def mvnHome = tool name: 'Maven-3', type: 'maven'
+      sh "${mvnHome}/bin/mvn package"
+   } 
+   
 }
