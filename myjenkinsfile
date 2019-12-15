@@ -5,7 +5,8 @@ node{
   }
   
   stage('Compile-Package'){
-    sh 'mvn package'
+   tool name: 'Maven-3', type: 'maven'
+   sh 'mvn package'
   }
   
 }
