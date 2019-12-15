@@ -1,11 +1,7 @@
 node{
 
    stage('SCM Checkout'){
-    git 'git credentialsId: 'git-marven', url: 'https://github.com/himalhewagamage/my-app''
-  }
-  
-  stage('Compile Package'){
-   sh 'mvn package'
+    git git credentialsId: 'git-marven', url: 'https://github.com/himalhewagamage/my-app'
   }
   
 }
