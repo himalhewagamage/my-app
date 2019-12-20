@@ -19,7 +19,7 @@ node{
    
     stage('War files deploying on Tomcat'){
       sshagent(['tomcat-dev']) {
-         sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Jenkinsfile-git-and-Maven/target/*.war ec2-user@172.31.3.246:/home/ec2-user/Tomcat/apache-tomcat-9.0.30/webapps
+         sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.3.246:/home/ec2-user/Tomcat/apache-tomcat-9.0.30/webapps
          }
    }
       
